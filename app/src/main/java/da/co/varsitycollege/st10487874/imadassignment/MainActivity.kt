@@ -1,6 +1,7 @@
 package da.co.varsitycollege.st10487874.imadassignment
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -14,60 +15,42 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        val ClickHereButton = findViewById<Button>(R.id.clickHereButton) // Button to access meals
+        val DayTime = findViewById<EditText>(R.id.DayTime) // User types the time of day
+        val txeHello = findViewById<TextView>(R.id.txeHello) // Welcome text
+        val MealsOptions = findViewById<TextView>(R.id.MealsOptions) // Display meal options
+        val resetbutton = findViewById<Button>(R.id.Resetbutton) // Reset button
 
-        val ClickHereButton =
-            findViewById<Button>(R.id.clickHereButton) // this isd the button to access the meals
-        val DayTime =
-            findViewById<EditText>(R.id.DayTime)// this is for the user to typ0e in the time of the day
-        val txeHello = findViewById<TextView>(R.id.txeHello) // this is a welcoming text
-        val MealsOptions = findViewById<TextView>(R.id.MealsOptions)
-        val resetbutton = findViewById<Button>(R.id.Resetbutton) // this is to reset everything
-
-
-        //This button
         ClickHereButton.setOnClickListener {
+            val userInput = DayTime.text.toString().trim() // get valid input
 
-
-            //
-            val message = when {
-
-                DayTime.text.toString() == "Morning" -> {
-                    "you may have some bread and strambled eggs"
-                }
-
-                DayTime.text.toString() == "Mid-Morning" -> {
-                    "i would suggest some fruit salad "
-                }
-
-                DayTime.text.toString() == "Afternoom" -> {
-                    "some bolognese and pasta would be great"
-                }
-
-                DayTime.text.toString() == "Afternoon snack" -> {
-                    "you may get some apple juice and and biscuit"
-                }
-
-                DayTime.text.toString() == "dinner" -> {
-                    "we highly recommend rice and meat "
-                }
-
-
-                DayTime.text.toString() == "after dinner" -> {
-                    "some latte "
-                }
-
-                else -> {
-                    "please try to type something else"
-                }
+            val message = when (userInput.lowercase()) {
+                "morning" -> "You may have some bread and scrambled eggs."
+                "mid-morning" -> "I would suggest some fruit salad."
+                "afternoon" -> "Some Bolognese and pasta would be great."
+                "afternoon snack" -> "You may get some apple juice and a biscuit."
+                "dinner" -> "We highly recommend rice and meat."
+                "after dinner" -> "Some latte would be great."
+                else -> "Please type in a valid time of the day."
             }
-            // this button clean what the user typed
-            resetbutton.setOnClickListener {
 
+            Log .d("DEBUG", "Message: $message")
 
-            }
+            MealsOptions.text = message // Display the message
         }
-    }
-}
+
+// Reset button clears input
+        resetbutton.setOnClickListener {
+            DayTime.text.clear()
+            MealsOptions.text = ""
+        }
+
+
+            }
+            }
+
+
+
 
 
 

@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+   android:background="@drawable/mmmm"
     tools:context=".MainActivity">
 
     <TextView
@@ -13,6 +14,8 @@
         android:layout_width="486dp"
         android:layout_height="wrap_content"
         android:text="WELCOME"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
          />
 
@@ -22,17 +25,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:text="please enter the time of the day"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:text="here time of the day"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-    <EditText
+    <TextView
         android:id="@+id/MealsOptions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Here are Meals options for you"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="here are some options for you" />
+
 
     <Button
         android:id="@+id/clickHereButton"
@@ -40,7 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="72dp"
         android:gravity="center"
-        android:text="Button" />
+        android:text="press me" />
 
     <Button
         android:id="@+id/Resetbutton"
@@ -48,5 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="72dp"
         android:text="reset" />
+
+
 
 </LinearLayout>
