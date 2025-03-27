@@ -25,16 +25,17 @@ class MainActivity : AppCompatActivity() {
             val userInput = DayTime.text.toString().trim() // get valid input
 
             val message = when (userInput.lowercase()) {
-                "morning" -> "You may have some bread and scrambled eggs."
-                "mid-morning" -> "I would suggest some fruit salad."
-                "afternoon" -> "Some Bolognese and pasta would be great."
-                "afternoon snack" -> "You may get some apple juice and a biscuit."
-                "dinner" -> "We highly recommend rice and meat."
-                "after dinner" -> "Some latte would be great."
-                else -> "Please type in a valid time of the day."
+                "morning", "mornig", "mornin" -> "You may have some bread and scrambled eggs."
+                "mid-morning", "midmorning", "mid-mornin" -> "I would suggest some fruit salad."
+                "afternoon", "afternon", "aftrnoon" -> "Some Bolognese and pasta would be great."
+                "afternoon snack", "afternoon snacks", "aftnoon snack" -> "You may get some apple juice and a biscuit."
+                "dinner", "diner", "dinnr" -> "We highly recommend rice and meat."
+                "after dinner", "afterdinner", "after dinr" -> "Some latte would be great."
+                else -> "Did you mean 'morning', 'afternoon', or 'dinner'? Please enter a valid time of day."
+
             }
 
-            Log .d("DEBUG", "Message: $message")
+            Log .d("DEBUG", "Message: $message")//
 
             MealsOptions.text = message // Display the message
         }
