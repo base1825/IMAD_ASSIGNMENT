@@ -10,7 +10,7 @@ platform : web or mobile
 -User inputs the time of the day (eg morning)
 -receives meal suggestions
 - A reset button allows  users to clear their the selection and start over
-
+bbbbb
 ## usefull ressources
 
 
