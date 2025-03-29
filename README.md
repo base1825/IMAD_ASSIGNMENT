@@ -5,6 +5,7 @@ this project is a simple interactive application where users input a time of the
 to run this meal suggestion app , follow these steps;
 you need to have an operating system( windows,macOs,linux) 
 platform : web or mobile
+
 # FEATURES
 -User inputs the time of the day (eg morning)
  -receives meal suggestions
